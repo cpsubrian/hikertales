@@ -5,5 +5,8 @@
     "react",
     "react-dom",
     "react-redux"
+  ],
+  "copy": [
+    "./public"
   ]
 }
