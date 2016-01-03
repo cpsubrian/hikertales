@@ -1,7 +1,8 @@
 import {combineReducers} from 'redux'
+import router from './router'
 
 const reducers = {
-
+  router
 }
 const combined = combineReducers(reducers)
 

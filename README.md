@@ -32,3 +32,8 @@ $ hipley --serve
 
 Or, just look at what `server.js` does and replicate that in your node app.
 
+Icon Credits
+============
+
+| `public/images/hiker.png` | Hiking by Ealancheliyan s from the Noun Project |
+

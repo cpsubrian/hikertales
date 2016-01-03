@@ -1,9 +1,11 @@
-import thunk from './thunk'
 import logger from './logger'
+import thunk from './thunk'
 
-const middleware = [
+export const before = [
   thunk,
   logger
 ]
 
-export default middleware
+export const after = [
+  logger
+]
