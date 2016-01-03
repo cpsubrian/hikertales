@@ -1,10 +1,10 @@
 HikerTales
------------
+==========
 
 Eventual app for hiker tales.
 
 Run Development Server
-======================
+----------------------
 
 ```
 $ hipley --dev
@@ -16,7 +16,7 @@ changes live-update. You can also edit `app.less` and see those changes
 auto-inject also.
 
 Build for Production
-====================
+--------------------
 
 ```
 $ hipley --build
@@ -33,7 +33,9 @@ $ hipley --serve
 Or, just look at what `server.js` does and replicate that in your node app.
 
 Icon Credits
-============
+------------
 
+| Icon                      | Credit                                          |
+| ------------------------- | ----------------------------------------------- |
 | `public/images/hiker.png` | Hiking by Ealancheliyan s from the Noun Project |
 
