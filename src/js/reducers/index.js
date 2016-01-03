@@ -1,8 +1,7 @@
 import {combineReducers} from 'redux'
-import comments from './comments'
 
 const reducers = {
-  comments
+
 }
 const combined = combineReducers(reducers)
 
