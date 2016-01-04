@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux'
+import auth from './auth'
 import router from './router'
 
 const reducers = {
+  auth,
   router
 }
 const combined = combineReducers(reducers)

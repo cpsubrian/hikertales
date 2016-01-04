@@ -1,10 +1,14 @@
 {
   "vendors": [
     "autobind-decorator",
-    "redux",
+    "firebase",
+    "history/lib/createBrowserHistory",
     "react",
     "react-dom",
-    "react-redux"
+    "react-redux",
+    "react-router",
+    "redux",
+    "redux-router"
   ],
   "copy": [
     "./public"
