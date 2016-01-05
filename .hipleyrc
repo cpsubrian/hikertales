@@ -8,7 +8,7 @@
     "react-redux",
     "react-router",
     "redux",
-    "redux-router"
+    "redux-simple-router"
   ],
   "copy": [
     "./public"

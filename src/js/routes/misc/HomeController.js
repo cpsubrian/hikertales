@@ -1,7 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
 
-@connect((state) => state)
 class HomeController extends React.Component {
 
   static propTypes = {

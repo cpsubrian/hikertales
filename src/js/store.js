@@ -1,15 +1,11 @@
 import {createStore, applyMiddleware, compose} from 'redux'
-import {reduxReactRouter} from 'redux-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
-import {before, after} from './middleware'
+import middleware from './middleware'
 import reducers from './reducers'
 
 const initialState = {}
 
 const store = compose(
-  applyMiddleware.apply(null, before),
-  reduxReactRouter({createHistory: createBrowserHistory}),
-  applyMiddleware.apply(null, after),
+  applyMiddleware.apply(null, middleware)
 )(createStore)(reducers, initialState)
 
 // Enable Webpack hot module replacement for middleware and reducers.

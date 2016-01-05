@@ -1,11 +1,7 @@
 import logger from './logger'
 import thunk from './thunk'
 
-export const before = [
+export default [
   thunk,
-  logger
-]
-
-export const after = [
   logger
 ]

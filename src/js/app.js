@@ -1,14 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {ReduxRouter} from 'redux-router'
 import {Provider} from 'react-redux'
-import routes from './routes/routes'
+import {Router, browserHistory} from 'react-router'
+import {syncReduxAndRouter} from 'redux-simple-router'
+import {routerSelector} from './selectors'
 import store from './store'
+import routes from './routes'
 
+// Hook up redux-simple-router with redux store.
+syncReduxAndRouter(browserHistory, store, routerSelector)
+
+// Render the App.
 ReactDOM.render((
   <Provider store={store}>
-    <ReduxRouter>
+    <Router history={browserHistory}>
       {routes}
-    </ReduxRouter>
+    </Router>
   </Provider>
-), document.getElementById('app'))
+), document.getElementById('root'))

@@ -22,9 +22,9 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
-    "react-router": "^1.0.3",
+    "react-router": "^2.0.0-rc4",
     "redux": "^3.0.4",
-    "redux-router": "^1.0.0-beta6"
+    "redux-simple-router": "^1.0.2"
   },
   "standard": {
     "parser": "babel-eslint"

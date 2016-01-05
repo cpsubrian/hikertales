@@ -1,7 +1,11 @@
-export const selectAll = function (state) {
+export function allSelector (state) {
   return state
 }
 
-export const selectAuth = function (state) {
+export function authSelector (state) {
   return state.auth
+}
+
+export function routerSelector (state) {
+  return state.router
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {selectAuth} from '../../selectors'
+import {authSelector} from '../../selectors'
 import {login, logout} from '../../actions/auth'
 import TopBar from '../../components/TopBar'
 
-@connect(selectAuth, {login, logout})
+@connect(authSelector, {login, logout})
 class AppController extends React.Component {
 
   static propTypes = {
