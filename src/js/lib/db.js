@@ -38,6 +38,18 @@ class API {
       cb(err)
     }
   }
+
+  /* Users
+   ****************************************************************************/
+  fetchUser (uid, cb) {
+    console.log('fetch user')
+    cb()
+  }
+
+  saveUser (user, cb) {
+    console.log('save user')
+    cb()
+  }
 }
 
 export default new API()
