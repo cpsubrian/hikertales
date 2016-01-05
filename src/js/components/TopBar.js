@@ -1,5 +1,7 @@
 import React from 'react'
 import autobind from 'autobind-decorator'
+import Button from './Button'
+import Icon from './Icon'
 
 @autobind
 class TopBar extends React.Component {
@@ -29,12 +31,12 @@ class TopBar extends React.Component {
         <div className='auth'>
           {(this.props.auth && this.props.auth.uid) ? (
             <a href='#' onClick={this.onClickLogout}>
-              Logout
+              Sign Out
             </a>
           ) : (
-            <a href='#' onClick={this.onClickTwitterLogin}>
-              <img src='/images/twitter-login.png'/>
-            </a>
+            <Button className='auth--twitter' outline onClick={this.onClickTwitterLogin}>
+              <Icon type='twitter'/> Sign in with Twitter
+            </Button>
           )}
         </div>
       </div>
