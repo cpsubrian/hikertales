@@ -8,7 +8,7 @@ class HomeController extends React.Component {
 
   render () {
     return (
-      <div className='controller--home'>
+      <div className='home'>
         Home
       </div>
     )

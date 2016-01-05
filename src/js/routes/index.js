@@ -1,13 +1,13 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 
-import AppController from './misc/AppController'
-import NotFoundController from './misc/NotFoundController'
-import HomeController from './misc/HomeController'
+import App from '../components/App'
+import Home from '../components/Home'
+import NotFound from '../components/NotFound'
 
 export default (
-  <Route path='/' component={AppController}>
-    <IndexRoute component={HomeController}/>
-    <Route path='*' component={NotFoundController}/>
+  <Route path='/' component={App}>
+    <IndexRoute component={Home}/>
+    <Route path='*' component={NotFound}/>
   </Route>
 )

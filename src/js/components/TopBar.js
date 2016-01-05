@@ -24,7 +24,7 @@ class TopBar extends React.Component {
     return (
       <div className='topbar'>
         <div className='brand'>
-          <h1>HikerTales</h1>
+          <h1><strong>Hiker</strong>Tales</h1>
         </div>
         <div className='auth'>
           {(this.props.auth && this.props.auth.uid) ? (

@@ -4,7 +4,7 @@ class NotFoundController extends React.Component {
 
   render () {
     return (
-      <div className='controller--notfound'>
+      <div className='notfound'>
         <h1>404 Page Not Found</h1>
         <p>
           Sorry, we couldn't find what you were looking for.
