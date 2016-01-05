@@ -22,6 +22,11 @@ class TopBar extends React.Component {
     this.props.login('twitter')
   }
 
+  onClickFacebookLogin (e) {
+    e.preventDefault()
+    this.props.login('facebook')
+  }
+
   render () {
     return (
       <div className='topbar'>
@@ -31,17 +36,22 @@ class TopBar extends React.Component {
             <strong>Hiker</strong>Tales
           </h1>
         </div>
-        <div className='auth'>
-          {(this.props.auth && this.props.auth.uid) ? (
+        {(this.props.auth && this.props.auth.uid) ? (
+          <div className='auth'>
             <a href='#' onClick={this.onClickLogout}>
               Sign Out
             </a>
-          ) : (
+          </div>
+        ) : (
+          <div className='auth'>
             <Button className='auth--twitter' outline onClick={this.onClickTwitterLogin}>
               <Icon type='twitter'/> Sign in with Twitter
             </Button>
-          )}
-        </div>
+            <Button className='auth--facebook' outline onClick={this.onClickFacebookLogin}>
+              <Icon type='facebook'/> Sign in with Facebook
+            </Button>
+          </div>
+        )}
       </div>
     )
   }

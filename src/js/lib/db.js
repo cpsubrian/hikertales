@@ -20,6 +20,11 @@ class API {
         if (err) return cb(err)
         cb(null, authData)
       })
+    } else if (provider === 'facebook') {
+      db.authWithOAuthPopup('facebook', (err, authData) => {
+        if (err) return cb(err)
+        cb(null, authData)
+      }, {scope: 'public_profile,email'})
     } else {
       cb(new Error('Not a valid authentication provider'))
     }
