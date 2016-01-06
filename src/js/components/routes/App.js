@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {authSelector} from '../selectors'
-import {watchAuth, login, logout} from '../actions/auth'
-import TopBar from './TopBar'
-import Footer from './Footer'
+import {authSelector} from '../../selectors'
+import {watchAuth, login, logout} from '../../actions/auth'
+import TopBar from '../TopBar'
+import Footer from '../Footer'
 
 @connect(authSelector, {watchAuth, login, logout})
 class AppController extends React.Component {
