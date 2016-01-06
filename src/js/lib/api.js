@@ -4,6 +4,40 @@ const db = new Firebase('https://hikertales.firebaseio.com')
 
 class API {
 
+  _watchRefs = {}
+
+  /* Firebase Helpers
+   ****************************************************************************/
+  read (path, cb) {
+    db.child(path).once('value', (snap) => {
+      if (snap.exists()) {
+        cb(null, null)
+      } else {
+        cb(null, snap.val())
+      }
+    }, cb)
+  }
+
+  watch (path, cb) {
+    if (typeof this._watchRefs[path] === 'undefined') {
+      this._watchRefs[path] = db.child(path)
+      this._watchRefs[path].on('value', (snap) => {
+        cb(null, snap.val())
+      }, cb)
+    } else {
+      cb(new Error(`Already watching ${path}`))
+    }
+  }
+
+  unwatch (path, cb) {
+    if (typeof this._watchRefs[path] !== 'undefined') {
+      this._watchRefs[path].off('value')
+      cb()
+    } else {
+      cb(new Error(`Not watching ${path}`))
+    }
+  }
+
   /* Auth
    ****************************************************************************/
   fetchAuth (cb) {
@@ -12,6 +46,10 @@ class API {
     } catch (err) {
       cb(err)
     }
+  }
+
+  watchAuth (cb) {
+    db.onAuth(cb)
   }
 
   login (provider, cb) {
@@ -42,13 +80,15 @@ class API {
   /* Users
    ****************************************************************************/
   fetchUser (uid, cb) {
-    console.log('fetch user')
-    cb()
+    this.read(`users/${uid}`, cb)
   }
 
-  saveUser (user, cb) {
-    console.log('save user')
-    cb()
+  watchUser (uid, cb) {
+    this.watch(`users/${uid}`, cb)
+  }
+
+  unwatchUser (uid, cb) {
+    this.unwatch(`users/${uid}`, cb)
   }
 }
 
