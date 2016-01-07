@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux'
 import {routeReducer as router} from 'redux-simple-router'
 import auth from './auth'
+import users from './users'
 
 const reducers = {
   router,
-  auth
+  auth,
+  users
 }
 const combined = combineReducers(reducers)
 

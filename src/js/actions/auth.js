@@ -17,6 +17,10 @@ export function watchAuth () {
     dispatch({type: AUTH_WATCH_START})
     api.watchAuth((auth) => {
       dispatch({type: AUTH_CHANGED, auth})
+      if (auth && auth.uid) {
+        dispatch(watchUser(auth.uid))
+        api.checkUser(auth)
+      }
     })
   }
 }
@@ -29,7 +33,6 @@ export function login (provider) {
         dispatch({type: AUTH_LOGIN_FAILED, provider, err})
       } else {
         dispatch({type: AUTH_LOGIN_SUCCESS, provider, auth})
-        dispatch(watchUser(auth.uid))
       }
     })
   }

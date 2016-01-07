@@ -8,6 +8,7 @@ class TopBar extends React.Component {
 
   static propTypes = {
     auth: React.PropTypes.object,
+    user: React.PropTypes.object,
     login: React.PropTypes.func,
     logout: React.PropTypes.func
   }
@@ -38,6 +39,12 @@ class TopBar extends React.Component {
         </div>
         {(this.props.auth && this.props.auth.uid) ? (
           <div className='auth'>
+            {this.props.user ? (
+              <span className='user'>
+                <img src={this.props.user.photo}/>
+                <strong>{this.props.user.name} | </strong>
+              </span>
+            ) : null}
             <a href='#' onClick={this.onClickLogout}>
               Sign Out
             </a>
