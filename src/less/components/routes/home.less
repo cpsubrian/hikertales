@@ -1,0 +1,56 @@
+.route--home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .pitch {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 4.5em;
+      font-weight: 100;
+      line-height: 1.5em;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .browse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    & > * {
+      width: 45%;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 1.8em;
+      font-weight: 200;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 10px 0;
+        padding: 10px;
+        list-style: none;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+      }
+    }
+  }
+}

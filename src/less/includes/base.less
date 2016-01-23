@@ -1,23 +1,22 @@
 html, body {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  .fill-height;
 }
 body {
   margin: 0;
   padding: 0;
-  background-image: url(/images/background.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
   color: #333;
   font-size: 87%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+* {
+  box-sizing: border-box;
+}
 #root {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  .fill-height;
+  background-image: url(/images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
 }
 a {
   text-decoration: none;
